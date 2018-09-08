@@ -23,10 +23,14 @@ import {
 } from '@/config/env'
 
 export const initMenu = (router, menu) => {
+  
   if (menu.length === 0) {
     return
   }
+  console.log('router:',router.options.routes)
   router.addRoutes(formatRoutes(menu))
+  console.log('menu:',formatRoutes(menu))
+  console.log('router:',router.options.routes)
 }
 
 export const formatRoutes = (aMenu) => {
@@ -58,6 +62,7 @@ export const formatRoutes = (aMenu) => {
         children: validatenull(children) ? [] : formatRoutes(children)
       }
       aRouter.push(oRouter)
+      console.log(oRouter)
     }
 
   })

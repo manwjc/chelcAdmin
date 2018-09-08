@@ -76,7 +76,7 @@ export default {
         src: "/admin/code",
         value: "",
         len: 4,
-        type: "image"
+        type: "text"
       },
       loginRules: {
         password: [
@@ -117,6 +117,7 @@ export default {
         if (valid) {
           this.$store.dispatch("LoginByUsername", this.loginForm).then(
             res => {
+              console.log('login success', this.tagWel.value)
               this.$store.commit("ADD_TAG", this.tagWel);
               this.$router.push({ path: this.tagWel.value });
             },

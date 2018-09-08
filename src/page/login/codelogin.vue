@@ -60,6 +60,7 @@ export default {
       } else {
         callback();
       }
+      callback();
     };
     return {
       msgText: MSGINIT,

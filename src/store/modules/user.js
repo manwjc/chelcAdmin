@@ -77,6 +77,7 @@ const user = {
 
         loginByUsername(user.username, user.password, user.code, user.randomStr).then(response => {
           const data = response.data
+          console.log(data)
           setToken(data.access_token)
           commit('SET_ACCESS_TOKEN', data.access_token)
           commit('SET_REFRESH_TOKEN', data.refresh_token)
@@ -185,7 +186,7 @@ const user = {
       commit
     }) {
       return new Promise(resolve => {
-        GetMenu().then((res) => {
+        /* GetMenu().then((res) => {
           const data = res.data
           data.forEach(ele => {
             ele.children.forEach(child => {
@@ -194,7 +195,13 @@ const user = {
           });
           commit('SET_MENU', data)
           resolve(data)
-        })
+        }) */
+        let newMenu = [{
+            path: '/home',
+            name: 'home',
+            component: '@/page/home/index',
+          }]
+        resolve(newMenu)
       })
     }
   },

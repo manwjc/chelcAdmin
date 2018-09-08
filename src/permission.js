@@ -66,8 +66,9 @@ router.beforeEach((to, from, next) => {
       })
       NProgress.done()
     } else {
-      if (store.getters.roles.length === 0) {
+      if (!store.getters.roles) {
         store.dispatch('GetUserInfo').then(res => {
+          console.log('res:', res)
           const roles = res.roles
           next({ ...to,
             replace: true
@@ -85,6 +86,8 @@ router.beforeEach((to, from, next) => {
       }
     }
   } else {
+    console.log('no token')
+    // next()
     /* has no token*/
     if (whiteList.indexOf(to.path) !== -1) {
       next()

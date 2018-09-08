@@ -15,7 +15,7 @@
  * Author: lengleng (wangiegie@gmail.com)
  */
 
-const _import = require('./_import');
+const _import = require('./_import')
 import Layout from '@/page/index/'
 export default [{
   path: '/',
@@ -27,7 +27,7 @@ export default [{
   redirect: '/wel/index',
   children: [{
     path: 'index',
-    name: '首页',
+    name: '首页aaa',
     component: _import('wel')
   }]
 }, {

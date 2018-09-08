@@ -17,14 +17,15 @@
 
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
-var baseUrl = 'http://127.0.0.1:9999';
+var baseUrl = 'https://www.easy-mock.com/mock/5b938a76cd3673689e9e9826/pic';
+// var baseUrl = 'http://192.168.1.113:9999';
 module.exports = {
   build: {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
     productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -43,7 +44,7 @@ module.exports = {
     port: 8000,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
-    host: 'localhost',
+    host: '192.168.1.115',
     assetsPublicPath: '/',
     proxyTable: {
       '/auth': {

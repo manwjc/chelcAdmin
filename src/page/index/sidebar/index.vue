@@ -39,15 +39,15 @@ export default {
   },
   created() {
     if (validatenull(this.menu)) {
-      let menuData = [{
-        path: '/home',
-        name: 'home',
-        component: '@/page/home/index',
-      }]
-      initMenu(this.$router, menuData);
-      // this.$store.dispatch("GetMenu").then(data => {
-      //   initMenu(this.$router, data);
-      // });
+      // let menuData = [{
+      //   path: '/home',
+      //   name: 'home',
+      //   component: '@/page/home/index',
+      // }]
+      // initMenu(this.$router, menuData);
+      this.$store.dispatch("GetMenu").then(data => {
+        initMenu(this.$router, data);
+      });
     }
   },
   computed: {

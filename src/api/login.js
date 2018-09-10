@@ -46,10 +46,12 @@ export function mobileLogin(mobile, code) {
 }
 
 export const getUserInfo = () => {
-  return request({
+  /* return request({
     url: '/admin/user/info',
     method: 'get'
-  })
+  }) */
+  console.log('userInfo:', userInfo)
+  return userInfo;
 }
 
 export const logout = (accesstoken, refreshToken) => {

@@ -186,8 +186,10 @@ const user = {
       commit
     }) {
       return new Promise(resolve => {
-        /* GetMenu().then((res) => {
-          const data = res.data
+        GetMenu().then((res) => {
+          // const data = res.data
+          const data = res.data.data.dataInfo
+          console.log('is menu', data)
           data.forEach(ele => {
             ele.children.forEach(child => {
               if (!validatenull(child.component)) child.path = `${ele.path}/${child.path}`
@@ -195,13 +197,7 @@ const user = {
           });
           commit('SET_MENU', data)
           resolve(data)
-        }) */
-        let newMenu = [{
-            path: '/home',
-            name: 'home',
-            component: '@/page/home/index',
-          }]
-        resolve(newMenu)
+        })
       })
     }
   },

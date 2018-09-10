@@ -16,11 +16,14 @@
  */
 
 import request from '@/router/axios'
+import { menu, menuAll } from '@/mock/menu'
 export function GetMenu() {
   return request({
     url: '/admin/menu/userMenu',
     method: 'get'
   })
+  // console.log('menumenu:', menu)
+  // return menu;
 }
 export function fetchTree(query) {
   return request({

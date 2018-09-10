@@ -62,7 +62,8 @@ export default {
     },
     open(item) {
       this.$router.push({
-        path: resolveUrlPath(item.path, item.label),
+        // path: resolveUrlPath(item.path, item.label),
+        path: resolveUrlPath(item.href, item.label),
         query: item.query
       });
     }
